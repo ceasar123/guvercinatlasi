@@ -82,8 +82,9 @@ h1+.etiket{margin-top:12px}
   h1+.etiket{margin-top:16px}
 }
 /* iz: durağan varsayılan; .kh hareketli */
-.iz{position:relative;background:var(--gece);color:var(--kemik-koyu);text-align:center;--iz:568;--a0:52;--a1:260;--b1:312;--lv:351;--kes:442}
-@media (orientation:landscape){.iz{--iz:620;--a0:52;--a1:312;--b1:364;--lv:403;--kes:494}}
+/* A2 zaman çizgisi (svh): S1 geçit 0-120, S2 ölçüm 120-260 (levha 150), S3 sicil 260-420, ara kart 430. JS'te sayı yok. */
+.iz{position:relative;background:var(--gece);color:var(--kemik-koyu);text-align:center;--iz:540;--s0:0;--s1:30;--a0:30;--am:76;--a1:120;--a2:120;--lv:150;--b0:260;--b2:260;--b1:380;--bh:400;--c1:420;--kes:430}
+@media (orientation:landscape){.iz{--a1:112;--a2:120;--b2:268}}
 .iz[data-iz=irk]{--iz:256}
 @media (orientation:landscape){.iz[data-iz=irk]{--iz:308}}
 .iz-metin{position:relative;z-index:2;width:min(var(--kap),100% - 2*var(--pay));margin-inline:auto;padding:24px 0 32px}
@@ -107,14 +108,22 @@ h1+.etiket{margin-top:12px}
 .duvar .merkez{background-image:url(/assets/k1/bakis-kare.webp)}
 .ilerleme{display:none}
 .kh .iz{height:calc(var(--iz)*1svh)}
-.kh .iz-metin{position:absolute;inset:0 0 auto;padding-top:24px;width:auto;padding-inline:var(--pay);background:linear-gradient(rgb(14 12 10/.8) 75%,transparent)}
+.kh .iz-metin{position:absolute;inset:0 0 auto;padding-top:24px;width:auto;padding-inline:var(--pay)}
+.kh [data-iz=ana] .sahne-k{background:#000}
+.kh [data-iz=ana] .iz-metin{padding-top:16px}.kh [data-iz=ana] h1{width:auto;font-size:34px;line-height:40px;margin-top:10px}.kh [data-iz=ana] .giris{font-size:16px;line-height:24px;margin-top:8px}.kh [data-iz=ana] .isaret{display:none}
+@media (min-width:768px){.kh [data-iz=ana] h1{width:auto;font-size:72px;line-height:72px}.kh [data-iz=ana] .giris{margin-top:16px}}
+@media (orientation:portrait){.kh [data-iz=ana] .levha{min-height:0;padding:14px 20px 16px}.kh [data-iz=ana] .levha h3{font-size:24px;line-height:30px;margin:4px auto 6px}.kh [data-iz=ana] .levha p{font-size:14px;line-height:20px;margin-bottom:8px}.kh [data-iz=ana] .levha .dugme{padding:9px 18px}}
 .kh .sahne-k{position:sticky;top:0;height:100lvh;overflow:hidden}
 .kh .kadr-a,.kh canvas,.kh .ara-kart{position:absolute;inset:0;width:100%;height:100%}
 .kh .kadr-a img{height:100%;object-fit:cover}
-.kh [data-iz=ana] .kadr-b{display:none}
+.kh [data-iz=ana] .kadr-a img{object-fit:contain;object-position:50% 100%;translate:0 11%}
+@media (orientation:landscape){.kh [data-iz=ana] .kadr-a img{object-fit:cover;object-position:50% 50%;translate:0 10%}}
+.kh [data-iz=ana] .kadr-b,.kh [data-iz=ana] .kadr-c{display:none}
 .kh .ilerleme{display:block;position:absolute;right:0;top:0;width:1px;height:100%;background:var(--gumus);transform-origin:top;transform:scaleY(var(--ilr,0))}
 .kh .sahne-k .levha{position:absolute;left:0;right:0;bottom:0;width:auto;margin:0;padding:32px var(--pay) 40px;background:var(--gece);opacity:0}
+.kh [data-iz=ana] .levha{background:#000}
 .kh .sahne-k .levha>*{max-width:var(--olcu);margin-inline:auto}
+@media (orientation:landscape){.kh [data-iz=ana] .levha{left:auto;top:0;width:34%;display:flex;flex-direction:column;justify-content:center;text-align:left;padding:0 var(--pay)}.kh [data-iz=ana] .levha .dugme-satir{text-align:left}}
 @media (orientation:landscape){.kh .sahne-k .levha{padding:20px var(--pay) 24px}.kh .sahne-k .levha>*{max-width:52rem}.kh .sahne-k .levha h3{margin:4px auto 12px}.kh .sahne-k .levha p{margin-bottom:12px}}
 @media (orientation:portrait){.kh .sahne-k .levha{min-height:40%}}
 .kh .levha-acik .levha,.kh .sahne-k .levha:focus-within{opacity:1}
@@ -170,7 +179,9 @@ a[href^="#k"]:hover,.oda a[href^="#k"]:hover{color:var(--kemik);text-decoration:
 
 /* ana sayfa kartları */
 .oda>.kartlar{width:min(var(--bant),100% - 2*var(--pay));display:grid;gap:28px}
-.kartlar .kart{border-top:2px solid var(--gumus);padding-top:24px}
+.kartlar .kart{border:1px solid var(--kul);border-bottom:6px solid var(--kul);padding:28px 24px 24px;background:#000}
+.kartlar .kart:not(:has(.yakinda)){background:#fff;border-color:#fff;color:#000}
+.kartlar .kart:not(:has(.yakinda)) h3,.kartlar .kart:not(:has(.yakinda)) a{color:#000}
 .kart h3{font-size:22px;line-height:32px;letter-spacing:.04em;margin-bottom:16px}
 .kart h3 a{text-decoration:none}
 .kart p{font-size:18px;line-height:28px;margin-bottom:16px}

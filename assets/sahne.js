@@ -7,53 +7,75 @@
   const bos = f => (window.requestIdleCallback || setTimeout)(f);
   const yuklendi = f => d.readyState == 'complete' ? bos(f) : addEventListener('load', () => bos(f));
 
+  // A2: manifest.plan = [v0 adı, v1 adı, kare0, kare1, ölçek0, ölçek1]; kare -1 = siyah kesme. Eşikler CSS'te (--a0 ...).
   function ana(iz, s) {
-    const c = s.querySelector('canvas'), x = c.getContext('2d'), yon = M('(orientation: landscape)');
-    let m, set, kare = [], N = 0, na = 0, son = -1, en = 0;
-    const p3 = i => String(i).padStart(3, '0');
+    const c = s.querySelector('canvas'), x = c.getContext('2d'), yon = M('(orientation: landscape)'), V = n => P(iz, '--' + n);
+    let m, o, blob = [], bm = new Map(), bek = new Set(), son = '', v = 0, ver = 0;
     function yukle() {
-      const st = yon.matches ? 'yatay' : 'dikey', o = m[st], ad = [];
-      set = st; kare = []; son = -1; na = o.a;
-      for (let i = 0; i < o.a; i++) ad.push('a' + p3(i));
-      for (let i = 0; i < o.b; i++) ad.push('b' + p3(i));
-      N = ad.length;
-      // aşamalı: ilk ve tutma karesi, sonra her 8., 4., 2. ve hepsi
-      const sira = [0, N - 1], var_ = new Set(sira);
+      const st = yon.matches ? 'yatay' : 'dikey', my = ++ver;
+      for (const b of bm.values()) b.close();
+      o = m[st]; blob = []; bm = new Map(); bek = new Set(); son = '';
+      const N = o.kare.length, sira = [...o.oncelik], var_ = new Set(sira);
       for (const a of [8, 4, 2, 1]) for (let i = 0; i < N; i += a) if (!var_.has(i)) { var_.add(i); sira.push(i); }
-      let j = 0;
+      let j = 0, n = 0;
       const sonraki = () => {
-        if (set != st || j >= sira.length) return;
+        if (my != ver || j >= sira.length) return;
         const i = sira[j++];
-        fetch(o.yol + ad[i] + '.webp').then(r => r.blob()).then(createImageBitmap).then(b => {
-          if (set != st) return;
-          kare[i] = b; son = -1; ciz(); sonraki();
+        fetch(o.yol + o.kare[i]).then(r => r.blob()).then(b => {
+          if (my != ver) return;
+          blob[i] = b; h.dataset.a2 = ++n + '/' + N; ciz(); sonraki();
         }).catch(sonraki);
       };
       for (let q = 0; q < 4; q++) sonraki();
     }
-    yuklendi(() => fetch('/assets/k1/manifest.json').then(r => r.json()).then(j => { m = j; yukle(); }));
+    function bit(i) {
+      const b = bm.get(i);
+      if (b) { bm.delete(i); bm.set(i, b); return b; }
+      if (bek.has(i)) return;
+      const my = ver; bek.add(i); h.dataset.a2b = bek.size;
+      createImageBitmap(blob[i]).then(b => {
+        bek.delete(i); h.dataset.a2b = bek.size;
+        if (my != ver) return b.close();
+        bm.set(i, b);
+        if (bm.size > 14) { const [k0, b0] = bm.entries().next().value; bm.delete(k0); b0.close(); }
+        ciz();
+      });
+    }
+    yuklendi(() => fetch('/assets/a2/manifest.json').then(r => r.json()).then(j => { m = j; yukle(); }));
     yon.addEventListener('change', () => m && yukle());
-    let v = 0;
     function ciz() {
-      if (!N) return;
-      const a0 = P(iz, '--a0'), a1 = P(iz, '--a1'), b1 = P(iz, '--b1'), nb = N - na;
-      let i = v < a0 ? 0 : v < a1 ? Math.round((v - a0) / (a1 - a0) * (na - 1)) : na + Math.min(nb - 1, Math.round((v - a1) / (b1 - a1) * (nb - 1)));
-      let k = -1;
-      for (let r = 0; r < N && k < 0; r++) k = kare[i - r] ? i - r : kare[i + r] ? i + r : -1;
-      const w = c.clientWidth, hh = c.clientHeight, dpr = Math.min(devicePixelRatio || 1, 2);
-      const yeni = Math.round(w * dpr) + 'x' + Math.round(hh * dpr);
-      if (k < 0 || (k == son && yeni == en)) return;
-      if (yeni != en) { en = yeni; c.width = Math.round(w * dpr); c.height = Math.round(hh * dpr); }
-      const b = kare[k], o = Math.max(c.width / b.width, c.height / b.height);
-      x.drawImage(b, (c.width - b.width * o) / 2, (c.height - b.height * o) / 2, b.width * o, b.height * o);
-      son = k; c.hidden = false;
+      if (!o) return;
+      const L = (p, j, t, z) => p[j] == null ? z : p[j] + (p[j + 1] - p[j]) * t;
+      let i = 0, k = 1, y = 0, f = -1, b;
+      for (const p of o.plan) {
+        const a = V(p[0]), t = sinir((v - a) / (V(p[1]) - a || 1));
+        if (v < a && p != o.plan[0]) break;
+        i = p[2] < 0 ? -1 : Math.round(L(p, 2, t)); k = L(p, 4, t, 1); y = L(p, 6, t, 0);
+      }
+      if (i >= 0) {
+        for (let r = 0; r < o.kare.length && f < 0; r++) f = blob[i - r] ? i - r : blob[i + r] ? i + r : -1;
+        if (f < 0 || !(b = bit(f))) return;
+      }
+      const dpr = Math.min(devicePixelRatio || 1, 3), W = Math.round(s.clientWidth * dpr), H = Math.round(s.clientHeight * dpr);
+      const key = f + ':' + k.toFixed(4) + ':' + y.toFixed(4) + ':' + W + 'x' + H;
+      if (key == son) return;
+      if (c.width != W || c.height != H) { c.width = W; c.height = H; }
+      x.fillStyle = '#000'; x.fillRect(0, 0, W, H);
+      if (b) {
+        const sc = (o.kip == 'en' ? W / b.width : Math.max(W / b.width, H / b.height)) * k, dw = b.width * sc, dh = b.height * sc;
+        let oy = .5;
+        for (const r of o.oy) if (f >= r[0] && f <= r[1]) oy = r[2];
+        x.imageSmoothingQuality = 'high';
+        x.drawImage(b, (W - dw) / 2, (H - dh) * oy + y * H, dw, dh);
+      }
+      son = key; c.hidden = false;
     }
     return u => {
       v = u;
-      const a0 = P(iz, '--a0'), b1 = P(iz, '--b1'), lv = P(iz, '--lv'), ks = P(iz, '--kes');
-      s.classList.toggle('levha-acik', v >= lv && v < ks);
+      const ks = V('kes');
+      s.classList.toggle('levha-acik', v >= V('lv') && v < V('b0'));
       s.classList.toggle('kesik', v >= ks);
-      s.style.setProperty('--ilr', sinir((v - a0) / (b1 - a0)));
+      s.style.setProperty('--ilr', sinir((v - V('a0')) / (ks - V('a0'))));
       ciz();
     };
   }

@@ -103,9 +103,9 @@ h1+.etiket{margin-top:12px}
 [data-iz=irk] .ara-kart{min-height:50svh}
 @media (min-width:768px){.ara-kart{font-size:96px;line-height:96px}}
 .duvar{display:grid;grid-template-columns:repeat(9,1fr);width:min(100%,92svh);margin:0 auto;aspect-ratio:1}
-.duvar i{background:url(/assets/k1/karo-1.webp) center/cover}
-.duvar .g1{background-image:url(/assets/k1/karo-2.webp)}.duvar .g2{background-image:url(/assets/k1/karo-3.webp)}
-.duvar .merkez{background-image:url(/assets/k1/bakis-kare.webp)}
+.duvar i{background:url(/assets/a2/karo-siluet.webp) center/cover}
+.duvar .g1{background-image:url(/assets/a2/karo-bos.webp)}.duvar .g2{background-image:url(/assets/a2/karo-bos.webp)}
+.duvar .merkez{background-image:url(/assets/a2/irk-merkez.webp)}
 .ilerleme{display:none}
 .kh .iz{height:calc(var(--iz)*1svh)}
 .kh .iz-metin{position:absolute;inset:0 0 auto;padding-top:24px;width:auto;padding-inline:var(--pay)}

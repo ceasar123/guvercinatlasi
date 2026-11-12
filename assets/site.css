@@ -283,3 +283,12 @@ dd{margin:4px 0 0;font-size:18px;line-height:28px}
 .irk-bas .irk-levha{margin:28px auto 8px;width:min(620px,100%)}
 .irk-levha img{width:100%;border:2px solid var(--murekkep);outline:1px solid var(--murekkep);outline-offset:6px}
 .sahne::before,.bant::before{display:none}
+
+/* Fasikül indirme sayfası */
+.fas-kapak{margin:20px auto 8px;width:min(290px,78vw)}
+.fas-kapak img{display:block;width:100%;height:auto;border:1px solid var(--murekkep);box-shadow:0 1px 0 var(--kul),0 18px 40px -24px rgba(42,33,25,.45)}
+.fas-sayfalar{width:min(var(--bant),100% - 2*var(--pay));margin:28px auto 8px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fas-sayfalar figure{margin:0}
+.fas-sayfalar img{display:block;width:100%;height:auto;border:1px solid var(--kul)}
+.fas-sayfalar figcaption{font-size:13px;color:var(--gumus);margin-top:8px;text-align:center}
+@media (max-width:640px){.fas-sayfalar{grid-template-columns:1fr 1fr}.fas-sayfalar figure:last-child{grid-column:1/-1;width:50%;justify-self:center}}

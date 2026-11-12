@@ -16,15 +16,14 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0E0C0A">
+<meta name="theme-color" content="#F3EAD8">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/jost-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
-<link rel="preload" href="/assets/a2/s1-dikey.webp" as="image" type="image/webp" media="(orientation: portrait)" fetchpriority="high">
-<link rel="preload" href="/assets/a2/s1-yatay.webp" as="image" type="image/webp" media="(orientation: landscape)" fetchpriority="high">
-<script>(()=>{const c=navigator.connection;if(!(c&&(c.saveData||/2g|3g/.test(c.effectiveType||"")))&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("kh")})()</script>
-<script src="/assets/sahne.js" defer></script>
+<link rel="preload" href="/assets/g3d/levha-sebap.webp" as="image" type="image/webp" fetchpriority="high">
+<script>(()=>{const c=navigator.connection,v=document.createElement("canvas");if(!(c&&(c.saveData||/2g|3g/.test(c.effectiveType||"")))&&!matchMedia("(prefers-reduced-motion: reduce)").matches&&(v.getContext("webgl2")||v.getContext("webgl")))document.documentElement.classList.add("g3")})()</script>
+<script type="module" src="/assets/g3d/salon.js"></script>
 </head>
 <body>
 <a class="atla" href="#icerik">İçeriğe geç</a>
@@ -36,26 +35,28 @@
   </nav>
 </header>
 <main id="icerik">
-<section class="iz" data-iz="ana" aria-label="Giriş">
-<div class="iz-metin">
+<section class="salon" aria-label="Giriş">
+<script type="application/json" class="salon-veri">{"levhalar":[{"src":"/assets/g3d/levha-kiremit.webp","ad":"Kiremitte kabarmış"},{"src":"/assets/g3d/levha-kar.webp","ad":"Karlı duvar"},{"src":"/assets/g3d/levha-yuva.webp","ad":"Yuva gözleri"},{"src":"/assets/g3d/levha-raf.webp","ad":"Yem tanesi"},{"src":"/assets/g3d/levha-kiyi.webp","ad":"Kıyıda dinlenme"},{"src":"/assets/g3d/levha-mikroskop.webp","ad":"Mikroskop başında"},{"src":"/assets/g3d/levha-kaya.webp","ad":"Kayalık"},{"src":"/assets/g3d/levha-deniz.webp","ad":"Deniz kayası"},{"src":"/assets/g3d/levha-telek.webp","ad":"Açılmış kuyruk"},{"src":"/assets/g3d/levha-tabure.webp","ad":"Paçalı süs güvercini"},{"src":"/assets/g3d/levha-cerceve.webp","ad":"Boş çerçeve"},{"src":"/assets/g3d/levha-ayna.webp","ad":"Ayna karşısında"}],"son":{"src":"/assets/g3d/levha-sebap.webp","ad":"Şebap · Şanlıurfa"}}</script>
+<div class="salon-sahne bas">
+<canvas aria-hidden="true"></canvas>
+<div class="salon-bas">
 <span class="etiket">Yazılı atlas</span>
 <h1>Güvercin Atlası</h1>
 <p class="giris">Türkiye'nin güvercin ırklarını, yalnızca kaynağı gösterilebilen bilgilerle, sade bir dille anlatıyoruz.</p>
 <i class="isaret" aria-hidden="true"></i>
 </div>
-<div class="sahne-k">
-<div class="kadr-a"><picture><source media="(orientation: landscape)" srcset="/assets/a2/s1-yatay.webp" width="2752" height="1536"><img src="/assets/a2/s1-dikey.webp" width="1170" height="2096" fetchpriority="high" alt="Opal beyaz ışık panellerinden kurulmuş, derine uzanan bir uçuş geçidi; sonundaki siyah açıklığın önünde profilden duran tek bir Şebap güvercini."></picture><canvas hidden aria-hidden="true"></canvas><i class="ilerleme" aria-hidden="true"></i></div>
-<div class="kadr-b"><picture><source media="(orientation: landscape)" srcset="/assets/a2/s2-yatay.webp" width="2752" height="1536"><img src="/assets/a2/s2-dikey.webp" width="1170" height="2096" loading="lazy" alt="Siyah bir odada alttan aydınlatılmış milimetrik ölçüm masasının ortasında duran Şebap güvercini doğrudan kameraya bakıyor."></picture></div>
+<p class="salon-levha-adi" aria-hidden="true"></p>
+<figure class="salon-yedek"><img src="/assets/g3d/levha-sebap.webp" width="1024" height="1024" fetchpriority="high" alt="Gravür tarzı çizim: turuncu göğüslü, kanadı kahverengi pullu, paçalı bir Şebap güvercini, eldivenli bir elin taşıdığı tepsideki kırmızı yastığın üstünde duruyor."></figure>
 <div class="levha">
     <h2>Öne çıkan ırk</h2>
     <h3><a href="/irklar/sebap/">Şebap</a></h3>
     <p>Şanlıurfa'ya özgü, iri başlı, kabarık tüylü bir süs güvercini. Kuyruğunun ortasındaki beyaz telekler onu kalabalıkta ele verir. Ölçüleri, renk çeşitleri, puan tablosu ve DNA'sı üzerine bilinenler tek sayfada.</p>
     <p class="dugme-satir"><a class="dugme" href="/irklar/sebap/">Şebap sayfasını oku</a></p>
 </div>
-<div class="kadr-c"><picture><source media="(orientation: landscape)" srcset="/assets/a2/s3-yatay.webp" width="2752" height="1536"><img src="/assets/a2/s3-dikey.webp" width="1170" height="2096" loading="lazy" alt="Kırmızı ışıklı kare yuva gözlerinden kurulu dev bir cephe; gözlerde siyah güvercin siluetleri, ortadaki tek beyaz gözde renkli Şebap."></picture></div>
-<h2 class="ara-kart" id="bolumler">Atlasın bölümleri</h2>
 </div>
 </section>
+
+<h2 class="ara-kart" id="bolumler">Atlasın bölümleri</h2>
 
 <section class="oda bolum" data-no="01" aria-labelledby="bolumler">
 <div class="kartlar">

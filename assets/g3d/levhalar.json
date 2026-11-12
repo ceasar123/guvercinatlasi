@@ -1,0 +1,76 @@
+{
+ "levhalar": [
+  {
+   "ad": "kiremit",
+   "src": "/assets/g3d/levha-kiremit.webp",
+   "alt": "Kiremit üstünde tüylerini kabartmış bir kaya güvercini.",
+   "kagit": "#FEF6E6"
+  },
+  {
+   "ad": "kar",
+   "src": "/assets/g3d/levha-kar.webp",
+   "alt": "Karlı bir duvarın üstünde duran güvercin.",
+   "kagit": "#FEF6E6"
+  },
+  {
+   "ad": "telek",
+   "src": "/assets/g3d/levha-telek.webp",
+   "alt": "Taburenin üstünde kuyruğunu yelpaze gibi açmış turuncu göğüslü bir güvercin.",
+   "kagit": "#FFFAE4"
+  },
+  {
+   "ad": "tabure",
+   "src": "/assets/g3d/levha-tabure.webp",
+   "alt": "Tabure üstünde paçalı, turuncu göğüslü bir süs güvercini.",
+   "kagit": "#FFFBE5"
+  },
+  {
+   "ad": "yuva",
+   "src": "/assets/g3d/levha-yuva.webp",
+   "alt": "Ahşap yuva gözlerinin önünde bekleyen güvercin.",
+   "kagit": "#FFFBE5"
+  },
+  {
+   "ad": "raf",
+   "src": "/assets/g3d/levha-raf.webp",
+   "alt": "Raf üstünde, havada süzülen yem tanelerine bakan güvercin.",
+   "kagit": "#FFFBE5"
+  },
+  {
+   "ad": "mikroskop",
+   "src": "/assets/g3d/levha-mikroskop.webp",
+   "alt": "Pirinç bir mikroskobun yanında duran güvercin.",
+   "kagit": "#FDF6E7"
+  },
+  {
+   "ad": "kiyi",
+   "src": "/assets/g3d/levha-kiyi.webp",
+   "alt": "Palmiyeli bir kıyıda, kayalıkta dinlenen güvercin.",
+   "kagit": "#FCF5E7"
+  },
+  {
+   "ad": "kaya",
+   "src": "/assets/g3d/levha-kaya.webp",
+   "alt": "Kayalık bir çıkıntıda tüneyen güvercin.",
+   "kagit": "#FDF6E8"
+  },
+  {
+   "ad": "deniz",
+   "src": "/assets/g3d/levha-deniz.webp",
+   "alt": "Deniz kıyısında bir kayanın üstünde duran güvercin.",
+   "kagit": "#FDF6E8"
+  },
+  {
+   "ad": "cerceve",
+   "src": "/assets/g3d/levha-cerceve.webp",
+   "alt": "Boş bir çerçevenin önünde duran güvercin.",
+   "kagit": "#FDF5E8"
+  },
+  {
+   "ad": "ayna",
+   "src": "/assets/g3d/levha-ayna.webp",
+   "alt": "Oval bir aynanın karşısında duran güvercin.",
+   "kagit": "#FCF5E6"
+  }
+ ]
+}

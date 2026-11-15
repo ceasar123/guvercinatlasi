@@ -305,3 +305,42 @@ dd{margin:4px 0 0;font-size:18px;line-height:28px}
 .tarihi-levha.cift .levhalar{display:grid;grid-template-columns:1fr;gap:16px;justify-items:center;align-items:end}
 .tarihi-levha.cift img{width:min(360px,100%)}
 @media (min-width:768px){.tarihi-levha.cift .levhalar{grid-template-columns:1fr 1fr;gap:24px}.tarihi-levha.cift img{width:100%;max-width:340px}}
+/* ırk haritası (gravür, JS'siz) */
+.harita{width:min(var(--kap),100% - 2*var(--pay));margin:48px auto 0}
+.harita>h2,.harita>.kucuk{max-width:var(--olcu);margin-inline:auto;text-align:center}
+.harita>.kucuk{font-style:italic;font-size:15px;line-height:22px;color:var(--gumus);margin-top:8px}
+.harita-cerceve{margin:24px 0 0;border:2px solid var(--murekkep);outline:1px solid var(--murekkep);outline-offset:5px;background:var(--gece)}
+.harita-svg{display:block;width:100%;height:auto}
+.harita-svg .dalga use{stroke:#B9A88E;stroke-linejoin:round}.harita-svg .dalga use.dz{stroke:var(--gece)}
+.harita-svg .komsu{fill:#EAE0CC}.harita-svg .komsu-t{fill:url(#yatay);stroke:var(--gumus);stroke-width:.6}
+.harita-svg .ko-cizgi{stroke:#D6CAB4;stroke-width:1}
+.harita-svg .il{fill:var(--kagit-acik);stroke:var(--kul);stroke-width:.6}
+.harita-svg .il-ikincil{fill:none;stroke:var(--kirmizi);stroke-width:1;stroke-dasharray:3 3}
+.harita-svg .il-vurgu{fill:#F1D9CF;stroke:var(--murekkep);stroke-width:1.2}
+.harita-svg .il-tarama{fill:url(#tarama);stroke:none}.harita-svg .tr-cizgi{stroke:#C98E7A;stroke-width:1}
+.harita-svg .kiyi{fill:var(--murekkep);stroke:var(--murekkep);stroke-width:3.4;stroke-linejoin:round}
+.harita-svg .deniz{font:italic 15px var(--metin);fill:var(--gumus);letter-spacing:.35em;text-anchor:middle}
+.harita-svg .nd{fill:var(--kirmizi);stroke:var(--murekkep);stroke-width:2}
+.harita-svg .ikincil .nd{fill:var(--gece);stroke:var(--kirmizi);stroke-width:2.5}
+.harita-svg .nh{fill:transparent}
+.harita-svg .ns{font:700 15px var(--levha);fill:var(--kagit-acik);text-anchor:middle;dominant-baseline:middle}
+.harita-svg .ne{font:500 17px var(--levha);fill:var(--murekkep);letter-spacing:.06em;paint-order:stroke;stroke:var(--gece);stroke-width:4px;stroke-linejoin:round}
+.harita-svg a:hover .nd,.harita-svg a:focus .nd{stroke-width:4}
+.harita-svg a:focus{outline:none}.harita-svg a:focus-visible .ne{text-decoration:underline}
+.il-listesi{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1px;background:var(--kul);border:1px solid var(--kul);margin:28px 0 0}
+.il-listesi>div{background:var(--gece);padding:14px 16px;scroll-margin-top:24px}
+.il-listesi h3{font:700 15px/20px var(--levha);letter-spacing:.12em;text-transform:uppercase;margin:0 0 6px;color:var(--murekkep)}
+.il-listesi ul{list-style:none;margin:0;padding:0}.il-listesi li{font-size:16px;line-height:26px}
+.il-listesi .kucuk{display:block;font-style:italic;font-size:13px;line-height:18px;color:var(--gumus)}
+.il-listesi>div:target{background:var(--gece-isik);box-shadow:inset 4px 0 0 var(--kirmizi)}
+.il-listesi .ikincil h3{color:var(--gumus)}
+.harita-kaynak{margin-top:12px!important;font-size:13px!important}
+@media (min-width:768px){.harita{margin-top:64px}.harita-svg .ne{font-size:15px}}
+@media (max-width:767px){
+.harita-svg .ne{font-size:34px;stroke-width:8px;letter-spacing:.02em}
+.harita-svg .nd,.harita-svg .nh{transform-box:fill-box;transform-origin:center;transform:scale(1.7)}
+.harita-svg .ns{font-size:26px}
+.harita-svg .deniz{font-size:26px}
+.harita-svg .il{stroke-width:1}
+}
+.harita-svg a{text-decoration:none}

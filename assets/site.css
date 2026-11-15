@@ -302,3 +302,6 @@ dd{margin:4px 0 0;font-size:18px;line-height:28px}
 .tarihi-levha .kucuk{text-align:left;margin:0 0 12px}
 .tarihi-levha .kaynak-satiri{font-size:13px;line-height:20px;color:var(--gumus);border-top:1px solid var(--kul);padding-top:10px;margin:0;overflow-wrap:anywhere}
 @media (min-width:768px){.oda>.tarihi-levha{padding:40px;margin:64px auto 8px}}
+.tarihi-levha.cift .levhalar{display:grid;grid-template-columns:1fr;gap:16px;justify-items:center;align-items:end}
+.tarihi-levha.cift img{width:min(360px,100%)}
+@media (min-width:768px){.tarihi-levha.cift .levhalar{grid-template-columns:1fr 1fr;gap:24px}.tarihi-levha.cift img{width:100%;max-width:340px}}

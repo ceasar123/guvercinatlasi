@@ -325,7 +325,7 @@ dd{margin:4px 0 0;font-size:18px;line-height:28px}
 .harita-svg .nh{fill:transparent}
 .harita-svg .ns{font:700 15px var(--levha);fill:var(--kagit-acik);text-anchor:middle;dominant-baseline:middle}
 .harita-svg .ne{font:500 17px var(--levha);fill:var(--murekkep);letter-spacing:.06em;paint-order:stroke;stroke:var(--gece);stroke-width:4px;stroke-linejoin:round}
-.harita-svg a:hover .nd,.harita-svg a:focus .nd{stroke-width:4}
+.harita-svg a:hover .nd,.harita-svg a:focus-visible .nd{stroke-width:3}
 .harita-svg a:focus{outline:none}.harita-svg a:focus-visible .ne{text-decoration:underline}
 .il-listesi{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1px;background:var(--kul);border:1px solid var(--kul);margin:28px 0 0}
 .il-listesi>div{background:var(--gece);padding:14px 16px;scroll-margin-top:24px}
@@ -353,7 +353,8 @@ dd{margin:4px 0 0;font-size:18px;line-height:28px}
 .harita-svg .sonuk{opacity:.12;transition:opacity .25s}
 .harita-svg a.sonuk{pointer-events:none}
 .harita-svg [data-il]{transition:opacity .25s}
-.harita-svg a.secili .nd{stroke-width:4;fill:var(--murekkep)}
+.harita-svg a.secili .nd{stroke-width:2;fill:var(--kirmizi)}
+.harita-svg a.secili .nh{fill:none;stroke:var(--kirmizi);stroke-width:2;stroke-dasharray:4 3}
 .harita-kart{position:absolute;z-index:3;width:300px;max-height:calc(100% - 24px);overflow:auto;background:var(--kagit-acik);border:2px solid var(--murekkep);outline:1px solid var(--murekkep);outline-offset:4px;box-shadow:0 6px 18px rgba(42,33,25,.18);padding:14px 16px 16px}
 .harita-kart .hk-ust{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--kul);padding-bottom:8px;margin-bottom:10px}
 .harita-kart h3{font:700 16px/20px var(--levha);letter-spacing:.12em;text-transform:uppercase;margin:0;color:var(--murekkep)}

@@ -292,3 +292,13 @@ dd{margin:4px 0 0;font-size:18px;line-height:28px}
 .fas-sayfalar img{display:block;width:100%;height:auto;border:1px solid var(--kul)}
 .fas-sayfalar figcaption{font-size:13px;color:var(--gumus);margin-top:8px;text-align:center}
 @media (max-width:640px){.fas-sayfalar{grid-template-columns:1fr 1fr}.fas-sayfalar figure:last-child{grid-column:1/-1;width:50%;justify-self:center}}
+
+/* tarihî levha: kamu malı arşiv gravürü, kaynak satırı zorunlu */
+.oda>.tarihi-levha{width:min(var(--genis),100% - 2*var(--pay));margin:48px auto 8px;padding:24px;background:var(--gece-isik);border:1px solid var(--kul);text-align:center}
+.tarihi-levha .etiket{display:inline-block;margin-bottom:16px}
+.tarihi-levha img{width:min(420px,100%);margin:0 auto;border:1px solid var(--kul)}
+.tarihi-levha figcaption{max-width:var(--olcu);margin:20px auto 0;text-align:left}
+.tarihi-levha figcaption p{margin:0 0 12px;font-size:16px;line-height:26px}
+.tarihi-levha .kucuk{text-align:left;margin:0 0 12px}
+.tarihi-levha .kaynak-satiri{font-size:13px;line-height:20px;color:var(--gumus);border-top:1px solid var(--kul);padding-top:10px;margin:0;overflow-wrap:anywhere}
+@media (min-width:768px){.oda>.tarihi-levha{padding:40px;margin:64px auto 8px}}

@@ -400,3 +400,7 @@ dd{margin:4px 0 0;font-size:18px;line-height:28px}
 .video{position:relative;aspect-ratio:16/9;width:100%;background:var(--gece)}
 .oda>.video,.oda>.video+.kucuk{width:min(var(--genis),100% - 2*var(--pay));margin-inline:auto}
 section.belgesel{margin-top:40px}
+/* dil düğmesi (19 Kas): İngilizce bölüm görünür olsun */
+.menu .dil a{border:1px solid currentColor;border-radius:999px;padding:6px 12px;margin:8px 0;color:var(--kemik)}
+.menu .dil a:hover{background:var(--kemik);color:var(--gece)}
+@media (min-width:768px){.menu .dil a{padding:6px 14px;margin:17px 0}}

@@ -378,3 +378,10 @@ dd{margin:4px 0 0;font-size:18px;line-height:28px}
 .harita-svg path.il-tarama.sonuk{opacity:0}
 .harita-svg a.sonuk{opacity:.18}
 .harita-kart{text-align:left}
+/* Etsy levha kutusu (ırk sayfaları) */
+.etsy-kutu{display:grid;grid-template-columns:minmax(120px,200px) 1fr;gap:28px;align-items:center;width:min(var(--genis),100% - 2*var(--pay));margin-inline:auto;padding:28px 0;border-top:1px solid var(--gumus);border-bottom:1px solid var(--gumus)}
+.etsy-kutu img{display:block;width:100%;height:auto;box-shadow:0 6px 18px rgba(42,33,25,.18)}
+.etsy-kutu h2{margin:4px 0 10px}
+.etsy-kutu .dugme{color:var(--murekkep)}
+.etsy-kutu .dugme:hover{background:var(--murekkep);color:var(--gece-isik)}
+@media (max-width:640px){.etsy-kutu{grid-template-columns:1fr;text-align:left}.etsy-kutu .etsy-levha{max-width:200px}}

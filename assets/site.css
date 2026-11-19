@@ -385,3 +385,18 @@ dd{margin:4px 0 0;font-size:18px;line-height:28px}
 .etsy-kutu .dugme{color:var(--murekkep)}
 .etsy-kutu .dugme:hover{background:var(--murekkep);color:var(--gece-isik)}
 @media (max-width:640px){.etsy-kutu{grid-template-columns:1fr;text-align:left}.etsy-kutu .etsy-levha{max-width:200px}}
+/* Rehber: Kısaca kutusu ve dizin */
+.kisaca{width:min(var(--olcu),100% - 2*var(--pay));margin:0 auto;padding:20px 24px;border:1px solid var(--cizgi);background:var(--gece-isik)}
+.kisaca h2{margin:0 0 8px}
+.kisaca ul{margin:0;padding-left:20px}
+.rehber-liste{list-style:none;padding:0;margin:0;display:grid;gap:20px}
+.rehber-liste li{border-top:1px solid var(--cizgi);padding-top:14px}
+.rehber-liste a{display:block;font-size:22px;line-height:30px;color:var(--kemik);text-decoration:none}
+.rehber-liste a:hover{text-decoration:underline}
+.rehber-liste .kucuk{display:block;margin-top:4px}
+.oda>.rehber-liste{width:min(var(--olcu),100% - 2*var(--pay));margin-inline:auto}
+.rehber-liste li,.rehber-liste .kucuk{text-align:left}
+/* Gömülü video (genel): her yerde 16:9 kutu */
+.video{position:relative;aspect-ratio:16/9;width:100%;background:var(--gece)}
+.oda>.video,.oda>.video+.kucuk{width:min(var(--genis),100% - 2*var(--pay));margin-inline:auto}
+section.belgesel{margin-top:40px}

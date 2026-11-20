@@ -126,6 +126,23 @@
 </section>
 </main>
 <footer class="alt">
+  <aside class="bulten-kutu" aria-labelledby="bulten-baslik">
+    <form class="bulten-form" method="post" action="https://2a1c5724.sibforms.com/serve/MUIFALwjj-g1oHNyUEWTdW8RHttLuwulH8i4XfzXS_duE0Nx9xF8ZMfDM6yHKj89aNZgV8HYO3hJT7rUdWQxtCFGqK6WXLuoZpFVfZ_LUDB6CZ8seMaLdD2Q66p3GOBWih5ZMHM48pMssoobcCPptFFRzaxSivhJjzfsQf-hIZw1ZjPFKBDpvOsppf2JKRBnEe_KpJYSsBZqquYd0Q==" accept-charset="utf-8">
+      <p class="etiket">Bülten</p>
+      <h2 id="bulten-baslik">Yeni ırk dosyalarından haberdar olun</h2>
+      <p>Yeni bir ırk sayfası, belgesel ya da levha yayımlandığında kısa bir e-posta. Yalnız e-posta adresiniz gerekir.</p>
+      <div class="bulten-satir">
+        <label for="bulten-eposta" class="gizli-etiket">E-posta adresiniz</label>
+        <input id="bulten-eposta" name="EMAIL" type="email" autocomplete="email" inputmode="email" required placeholder="ornek@eposta.com">
+        <button class="dugme" type="submit">Kaydol</button>
+      </div>
+      <label class="bulten-riza"><input type="checkbox" value="1" required><span><a href="/gizlilik/#bulten">Aydınlatma metnini</a> okudum; e-posta adresimin bülten gönderimi için işlenmesine ve yurt dışındaki e-posta servis sağlayıcısına aktarılmasına açık rıza veriyorum.</span></label>
+      <div class="bulten-tuzak" aria-hidden="true"><input type="hidden" name="locale" value="tr"><input type="text" name="email_address_check" tabindex="-1" autocomplete="off" value=""></div>
+      <p class="bulten-durum" role="status" aria-live="polite"></p>
+      <p class="kucuk">İstediğiniz an her e-postanın altındaki bağlantıyla çıkabilirsiniz.</p>
+    </form>
+  </aside>
+  <script>(function(){var f=document.querySelector('.bulten-form');if(!f||!window.fetch)return;var d=f.querySelector('.bulten-durum');f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('button');b.disabled=true;d.textContent='Gönderiliyor…';fetch(f.action,{method:'POST',body:new FormData(f)}).then(function(r){return r.json()}).then(function(j){if(j&&j.success){f.reset();d.textContent='Neredeyse tamam. E-posta kutunuza bir onay bağlantısı gönderdik; kaydınız bağlantıya tıkladığınızda tamamlanacak.'}else{d.textContent='Kaydınız şu an alınamadı. Lütfen adresi kontrol edip yeniden deneyin.'}}).catch(function(){d.textContent='Kaydınız şu an alınamadı. Lütfen biraz sonra yeniden deneyin.'}).then(function(){b.disabled=false})})})();</script>
   <a class="logo" href="/">Güvercin Atlası</a>
   <div class="destek"><span>Atlas herkese ücretsiz. Desteğin yeni bir ırkın sayfasına dönüşür.</span><a class="dugme destek-dugme" href="https://kreosus.com/guvercinatlasi?utm_source=guvercinatlasi&amp;utm_medium=site_alt&amp;utm_campaign=guvercinatlasi" target="_blank" rel="noopener">Atlasa destek ol</a></div>
   <p>© 2026 Güvercin Atlası · <span class="baglar"><a href="/gizlilik/">Gizlilik</a> · <a href="/iletisim/">İletişim</a> · <a href="/en/breeds/" hreflang="en" lang="en">English</a></span></p>
